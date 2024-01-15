@@ -1,15 +1,12 @@
-x = 2
-y = x + 5
-print(y)
+# money = 5,000,000
+# print(money) #In python -> tuple
+# print(type(money))
+#
+# cash = 5_000_000
+# print(cash)
+# print(type(cash)) #int
 
-print(type(3.14)) #float
-print(type(3.14) == float) #true
+base_number = int(input('Input base number : '))
+exponent_number = int(input('Input exponent number : '))
 
-print(isinstance(3.14,float))
-print(isinstance("inha",float)) #false p.69
-
-artists = ['bts', 'newjeans','ses','hot','blackpink']
-group = artists
-print(artists, group)
-artists[2] = 'seventeen'
-print(artists, group) #same address
+print(f'base is {base_number}, exponent is {exponent_number}, result is {base_number ** exponent_number}')
