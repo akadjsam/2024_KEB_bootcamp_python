@@ -1,12 +1,10 @@
-# first_number = int(input("First Number : "))
-# second_number = int(input("Second Number : ")) #p.83
-#
-# quotient = first_number // second_number
-# remainder = first_number % second_number
-#
-# print(f'quotient : {quotient}, remainder : {remainder}')
+dec = 65
+octal = 0o101
+hexadecimal = 0x41
+binary = 0b01000001
 
-first_number = int(input("First Number : "))
-second_number = int(input("Second Number : ")) #p.83
+print(dec, octal, hexadecimal, binary)
+print(chr(binary)) #p.85
 
-print(f'quotient : {divmod(first_number,second_number)[0]}, remainder : {divmod(first_number,second_number)[1]}')
+print(bin(dec),bin(octal),bin(hexadecimal),bin(binary))
+print(ord('B'),ord('Z'),ord('a'),ord('2'))
