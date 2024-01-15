@@ -1,14 +1,15 @@
-#SyntaxError: cannot assign to literal here. Maybe you meant '==' instead of '='?
-# "univ" = "inha univ" #literal error
-# 99 = 71 #literal error #p.64~65
+x = 2
+y = x + 5
+print(y)
 
-# OK
-#cas-sensitive
-abc = 7
-Abc = 8 #abc, Abc different
+print(type(3.14)) #float
+print(type(3.14) == float) #true
 
-test9 = 77
-#9test = 7 # error : variable must not start number
-_9test = 71
+print(isinstance(3.14,float))
+print(isinstance("inha",float)) #false p.69
 
-#False = 123 #error : reserved word p.65
+artists = ['bts', 'newjeans','ses','hot','blackpink']
+group = artists
+print(artists, group)
+artists[2] = 'seventeen'
+print(artists, group) #same address
