@@ -1,15 +1,14 @@
-a = "inha"
-print(a)
-print(a[3])
-# a[3] = "U" #immutable
-#
-sub = ['python','c++','linux']
-print(sub)
-print(sub[0])
-sub[0] = "database" #mutable p.63
-print(sub)
+#SyntaxError: cannot assign to literal here. Maybe you meant '==' instead of '='?
+# "univ" = "inha univ" #literal error
+# 99 = 71 #literal error #p.64~65
 
-# print(0.1)
-# print(1e-1)
-# print(3.141592)
-# print(0.3141592e3)
+# OK
+#cas-sensitive
+abc = 7
+Abc = 8 #abc, Abc different
+
+test9 = 77
+#9test = 7 # error : variable must not start number
+_9test = 71
+
+#False = 123 #error : reserved word p.65
