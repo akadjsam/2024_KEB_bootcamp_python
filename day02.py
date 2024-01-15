@@ -1,21 +1,12 @@
-# money = 5,000,000
-# print(money) #In python -> tuple
-# print(type(money))
+# first_number = int(input("First Number : "))
+# second_number = int(input("Second Number : ")) #p.83
 #
-# cash = 5_000_000
-# print(cash)
-# print(type(cash)) #int
+# quotient = first_number // second_number
+# remainder = first_number % second_number
+#
+# print(f'quotient : {quotient}, remainder : {remainder}')
 
-base_number = int(input('Input base number : '))
-exponent_number = int(input('Input exponent number : '))
-# f-string
-# print(f'base is {base_number}, exponent is {exponent_number}, result is {base_number ** exponent_number}') p.79
-print(f'base is {base_number}, exponent is {exponent_number}, result is {pow(base_number, exponent_number)}')
+first_number = int(input("First Number : "))
+second_number = int(input("Second Number : ")) #p.83
 
-#format
-print("base is {0}, exponent is {1}, result is {2}".format(base_number, exponent_number, pow(base_number, exponent_number)))
-print("base is {}, exponent is {}, result is {}".format(base_number, exponent_number, pow(base_number, exponent_number)))
-
-# c like
-print("base is %d, exponent is %d, result is %d" %(base_number, exponent_number, pow(base_number, exponent_number)))
-
+print(f'quotient : {divmod(first_number,second_number)[0]}, remainder : {divmod(first_number,second_number)[1]}')
