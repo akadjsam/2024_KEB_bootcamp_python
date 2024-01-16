@@ -4,13 +4,16 @@
 
 #prime number(솟수)
 number = int(input("Input number : "))
-isPrime = True #int -> boolean
-i = 2
-while i<number:
-    if number%i == 0:
-        isPrime = False #remove +
-        break
-    i += 1
+isPrime = True
+if number < 2:
+    print(f"{number} is not prime number")
+else:
+    i = 2
+    while i<number:
+        if number%i == 0:
+            isPrime = False
+            break
+        i += 1
 
 if isPrime: #remove count == 0
     print(f"{number} is prime number")
