@@ -4,14 +4,15 @@
 
 #prime number(솟수)
 number = int(input("Input number : "))
-count = 0
+isPrime = True #int -> boolean
 i = 2
 while i<number:
     if number%i == 0:
-        count += 1
+        isPrime = False #remove +
         break
     i += 1
-if count == 0:
+
+if isPrime: #remove count == 0
     print(f"{number} is prime number")
 else:
     print(f"{number} is not prime number")
