@@ -5,12 +5,13 @@
 #prime number(솟수)
 number = int(input("Input number : "))
 count = 0
-i = 1
-while i<=number:
+i = 2
+while i<number:
     if number%i == 0:
         count += 1
+        break
     i += 1
-if count == 2:
+if count == 0:
     print(f"{number} is prime number")
 else:
     print(f"{number} is not prime number")
