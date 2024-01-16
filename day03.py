@@ -1,17 +1,21 @@
 # course = "2024 KEB Bootcamp"
+# print(course.replace('KEB', 'INHA'))
+# print(course) #output : 2024 KEB Bootcamp (immutable)
+# course = course.replace('KEB', 'INHA')
 # print(course)
-# list_course = course.split() #아무것도 입력하지 않으면 스페이스 기준으로 리스트에 담기
-# list_course = course.split('B') # 출력 결과 : ['2024 KE', ' ', 'ootcamp'] B를 구분기호로 지정
-# print(list_course)
 
-# split : string to list
-# join : list to string
+# course = "KEB 2024 KEB Bootcamp"
+# course = course.replace('KEB', 'INHA',2) #3번째 인수는 변경할 숫자를 의미함.
+# print(course)
 
-# num = input("First number Second number").split()
-# print(type(num)) #num's type is 'list'
-# # print(num[0]+num[1]) #concatenation
-# print(int(num[0])+int(num[1])) #arithmetic opeartion
+# course = "*KEB 2024# KEB !Bootcamp...*!#"
+# course = course.strip("!#.*") #연속적으로 되어 있는 것들만 삭제(끝에 있는 것들)
+# print(course)
 
-sub = ["python", "c++", "database"]
-sub = "/ ".join(sub)
-print(sub)
+course = "* KEB 2024# KEB !Bootcamp KEB...*!#"
+print(course.find('KEB'))
+print(course.rfind('KEB')) #reverse
+print(course.index('KEB'))
+print(course.rindex('KEB')) #reverse
+print(course.find('inha')) # -1 return
+# print(course.index('inha')) # value error
