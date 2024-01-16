@@ -1,21 +1,12 @@
-# sub = {"python" : "kim", "c++" : "sung", "datastructure" : "kim","database" : "kang"}
-# sub2 = {"python" : "kim", "c++" : "sung", "datastructure" : "kim","database" : "kang"}
-# print("{0[python]}, {1[datastructure]}".format(sub,sub2))
+univ = "inha"
+i = 0
+while i < len(univ):
+    print(univ[i], end='')
+    i += 1
+print()
+# for i in univ:
+#     print(i,end='')
 
-#prime number(솟수)
-number = int(input("Input number : "))
-isPrime = True
-if number < 2:
-    print(f"{number} is not prime number")
-else:
-    i = 2
-    while i<number:
-        if number%i == 0:
-            isPrime = False
-            break
-        i += 1
-
-if isPrime: #remove count == 0
-    print(f"{number} is prime number")
-else:
-    print(f"{number} is not prime number")
+# for i in range(0,len(univ),1):
+for i in range(len(univ)):
+    print(univ[i],end='')
