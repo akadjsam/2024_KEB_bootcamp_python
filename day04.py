@@ -10,7 +10,7 @@ for number in range(n1,n2+1):
         pass
     else:
         i = 2
-        while i*i < number: #제곱을 활용하여 반복문 횟수 줄임 -> 성능개선
+        while i*i <= number: #제곱을 활용하여 반복문 횟수 줄임 -> 성능개선
             if number%i == 0:
                 isPrime = False
                 break
