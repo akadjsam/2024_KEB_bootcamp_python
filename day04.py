@@ -1,30 +1,28 @@
-t1 = (5)
-t2 = 5,
-t3 = (5,)
-t4 = (5,7)
-t5 = 5,7
-t6 = "123", "456" #패킹
-print(type(t1), type(t2),type(t3),type(t4),type(t5),type(t6)) # ()는 튜플에서 옵션고 같다.
+# #sub = ['a','b','c']
+# sub = ['a',['b','c'],'d']
+# a = sub
+# b = sub.copy()
+# c = list(sub)
+# d = sub[:]
+#
+# print(sub,a,b,c,d)
+# sub[1][1] = "x"
+# print(sub,a,b,c,d) #얕은복사
+#
 
-print(t6[0]) #튜플의 원소를 확인할 때는 []를 사용하여 확인
+import copy
+# #sub = ['a','b','c']
+sub = ['a',['b','c'],'d']
+a = sub
+b = sub.copy()
+c = list(sub)
+d = sub[:] #a~d 얕은복사
+e = copy.deepcopy(a) #깊은복사
+print(sub,a,b,c,d)
+sub[1][1] = "x"
+print(sub,a,b,c,d,e)
 
-n1,n2 = t6 #언패킹, 주의사항 : 언패킹 시 갯수가 일치해야 한다.
-#n1,n2,n3 = t6 #패킹되어 있는 수는 2개인데 언패킹 시 3개를 하려고 하기 때문에 에러 발생
-print(n2)
-
-t7 = () #()도 []와 같이 튜플을 생성하는 것이다.
-t8 = tuple() #기존의 자료구조를 변환할 때 사용한다. 리스트의 list()와 같은듯
-print(type(t7),type(t8),type(9,),type((9,)))
-
-t9 = 1,2,3
-t10 = 1,2,3,4
-print(t9 == t10)
-print(t9 <= t10) #튜플간의 비교 연산 가능
-
-t11 = 4.43,
-t12 = 3.97, 4.1, 3.27
-print(id(t11))
-print(t11 + t12)
-t11 += t12
-print(id(t11)) #t11의 id가 이전과 다름
-print(t11)
+eng = "a","b","c"
+fre = 'd','f','g'
+z = dict(zip(eng,fre))
+print(z)
