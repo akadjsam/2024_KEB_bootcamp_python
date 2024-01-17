@@ -36,7 +36,7 @@ while True:
     # Specify range
     elif menu == '4':
         prime_list = []
-        numbers = input("Input First number and Second number : ").split()
+        numbers = input("Input First number and Second number : ").split() # 개선 필요
         n1 = int(numbers[0])
         n2 = int(numbers[1])
         if n1 > n2:
@@ -46,7 +46,7 @@ while True:
             if number < 2:
                 pass
             else:
-                for i in range(2, number):
+                for i in range(2, number): #중복코드, 소수의 숫자가 크면 성능저하
                     if number % i == 0:
                         isPrime = False
                         break
