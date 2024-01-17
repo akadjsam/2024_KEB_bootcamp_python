@@ -1,13 +1,22 @@
-#normal
-# squares1 = []
-# for i in range(1,7):
-#     squares1.append(i+1)
-# print(squares1)
+sugang = dict(python="kim",cpp="sung",db="kang")
+# print(sugang)
+# sugang['datastructure'] = 'kim'
+# print(sugang)
+# sugang['datastructure'] = 'park'
+# print(sugang)
+#
+# print(sugang['db'])
+# print(sugang.get("db")) # get으로 해당 키에 해당하는 벨류를 출력
+# print(sugang.get("opensource")) #찾는 키값이 없으먼 none 리턴
+# print(sugang.get("opensource", "not exist")) #찾는 키 값이 없으면 , 뒤의 값을 출력
 
-#list comprehension
-squares2 = [i*i for i in range(1,7) if i % 2 == 1] #리스트 컴프레션에 홀수만 출력 조건 추가
-print(squares2)
+for sub, professor in sugang.items(): #모든 키/벨류값을 가져온다.
+    print(f'{sub} : {professor}') #딕셔너리에는 순서의 개념이 없다.
 
-# a = {[2]: [1,2], "b" : (1,2)} #딕셔너리의 키 값은 불변이어야 한다. (set, list, dict 등등 불가능)
-# print(type(a.get([2])))
-#x = dict(fi rst="123",def="456") #딕셔너리의 키 값은 공백이나 예약어가 올 수 없다.
+for i in sugang.keys(): #모든 키 가져오기 for i in sugang: 과 같게 동작한다.
+    print(i)
+for v in sugang.values(): #모든 벨류 가져오기
+    print(v)
+
+for s in sugang.items(): #하나로 받게 되면 튜플형태로 받는다.
+    print(s) #튜플로 출력
