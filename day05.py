@@ -1,19 +1,9 @@
-#inner function
-def out_func(nout):
-    def inner_func(nin):
-        return nin * nin
-    return inner_func(nout)
+a = ['7','-11','3']
+print(sum(map(int ,a))) #map은 반복가능한 자료형의 요소들을 형변환
+b=map(int ,a)
 
-print(out_func(5))
-
-#closure function
-def out_func(nout):
-    def inner_func():
-        return nout * nout
-    return inner_func
-
-x = out_func(9)
-print(type(x)) #x는 함수가 된다.
-print(x)
-print(x())
-print(out_func(8)())
+# b = 0
+# for i in a:
+#     b += int(i)
+#
+# print(b)
