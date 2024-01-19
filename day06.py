@@ -1,3 +1,6 @@
+from os import name
+
+
 class FlyinMinin:
     def fly(self):
         return print(f'{self.hidden_name}이(가) 날아갑니다.')
@@ -9,14 +12,17 @@ class Pokemon:
         self.hidden_name = name
     def attack(self):
         print("공격")
-    def get_name(self):
+
+    @property #데코레이터, getter로 동작
+    def name(self):
         print("inside getter")
         return self.hidden_name
-    def set_name(self,new_name):
+    @name.setter #데코레이터, getter로 동작
+    def name(self,new_name):
         print("inside setter")
         self.hidden_name = new_name
 
-    name = property(get_name,set_name)
+    #name = property(get_name,set_name)
 class Charizard(Pokemon, FlyinMinin):
     pass
 class Gyarados(Pokemon, SwimmingMixin):
