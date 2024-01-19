@@ -9,7 +9,12 @@ class Pokemon:
         self.name = name
     def attack(self):
         print("공격")
-
+    def get_name(self):
+        print("inside getter")
+        return self.name
+    def set_name(self,new_name):
+        print("inside setter")
+        self.name = new_name
 class Charizard(Pokemon, FlyinMinin):
     pass
 class Gyarados(Pokemon, SwimmingMixin):
@@ -22,6 +27,6 @@ c1 = Charizard("리자몽")
 # c1.attack()
 # #Charizard.attack() #에러. 이렇게 사용하기 위해서는 self에 해당하는 객체를 넣어주어야 함
 # Charizard.attack(c1)
-print(g1.name)
-g1.name = "잉어킹"
-print(g1.name)
+print(g1.get_name())
+g1.set_name("잉어킹")
+print(g1.get_name())
