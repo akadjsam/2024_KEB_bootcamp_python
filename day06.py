@@ -1,27 +1,20 @@
-def fac1(n):
-    """
-    반복문을 이용한 팩토리얼 함수
-    :param n: int
-    :return: factorial(int)
-    """
-    result = 1
-    for i in range(2,n+1):
-        result = result * i
-    return result
+import random as ra
 
-def factorial_recursion(n):
-    """
-    재귀함수를 이용한 재귀함수ㅡ
-    :param n: int
-    :return: function(int)
-    """
-    if n == 1:
-        return n
-    elif n <=0:
-        print("error : ",end='')
-        return n
-    else:
-        return n * factorial_recursion(n-1)
-
-print(fac1(5))
-print(factorial_recursion(-1))
+# numbers = []
+# for i in range(10):
+#     numbers.append(ra.randint(1,100))
+numbers = [ra.randint(1,100) for i in range(10)]
+print(numbers)
+while True:
+    try:
+        pick = int(input(f"Input index (0 ~ {len(numbers)-1}): "))
+        print(numbers[pick])
+        break
+    except IndexError as e:
+        print("error : ",e)
+    except ValueError as e:
+        print("error : ", e)
+    except ZeroDivisionError as e:
+        print("error : ",e)
+    except Exception as e: #문법상 except 중 맨 아래에 위치해야 한다.
+        print("error occurs :", e)
