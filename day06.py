@@ -1,3 +1,4 @@
+#open-closed
 def test(f):
     """
     decorator 함수 시작하면 start 출력, 함수 끝나면 end 출력
@@ -15,5 +16,7 @@ def test(f):
 @test
 def greeting():
     print("안녕하세요")
+# g = test(greeting)
+# g()
 
 greeting()
