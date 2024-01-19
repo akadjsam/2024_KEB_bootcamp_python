@@ -7,6 +7,8 @@ class SwimmingMixin:
 class Pokemon:
     def __init__(self,name):
         self.name = name
+    def attack(self):
+        print("공격")
 
 class Charizard(Pokemon, FlyinMinin):
     pass
@@ -15,5 +17,11 @@ class Gyarados(Pokemon, SwimmingMixin):
 
 g1 = Gyarados("갸라도스")
 c1 = Charizard("리자몽")
-g1.swim()
-c1.fly()
+# g1.swim()
+# c1.fly()
+# c1.attack()
+# #Charizard.attack() #에러. 이렇게 사용하기 위해서는 self에 해당하는 객체를 넣어주어야 함
+# Charizard.attack(c1)
+print(g1.name)
+g1.name = "잉어킹"
+print(g1.name)
