@@ -1,22 +1,27 @@
-#open-closed
-def test(f):
+def fac1(n):
     """
-    decorator 함수 시작하면 start 출력, 함수 끝나면 end 출력
-    :param f: function
-    :return: closure function
+    반복문을 이용한 팩토리얼 함수
+    :param n: int
+    :return: factorial(int)
     """
-    #def test_in():
-    def test_in(*args,**kwargs):
-        print('start')
-        #f() 이렇게 하면 리턴 생략 가능
-        result = f(*args,**kwargs)
-        print('end')
-        return result
-    return test_in
-@test
-def greeting():
-    print("안녕하세요")
-# g = test(greeting)
-# g()
+    result = 1
+    for i in range(2,n+1):
+        result = result * i
+    return result
 
-greeting()
+def factorial_recursion(n):
+    """
+    재귀함수를 이용한 재귀함수ㅡ
+    :param n: int
+    :return: function(int)
+    """
+    if n == 1:
+        return n
+    elif n <=0:
+        print("error : ",end='')
+        return n
+    else:
+        return n * factorial_recursion(n-1)
+
+print(fac1(5))
+print(factorial_recursion(-1))
