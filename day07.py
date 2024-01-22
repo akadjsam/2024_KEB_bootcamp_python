@@ -7,7 +7,7 @@ while True:
     #Fahrenheit to Celsius
     if menu == '1':
         fahrenheit = float(input("Input Fahrenheit : "))
-        print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit - 32.0) * 5.0 / 9.0):.4f}C')
+        print(f'Fahrenheit : {fahrenheit}F, Celsius : {mymath.fahrenheit_to_celsius(fahrenheit):.4f}C')
 
     # Celsius to Fahrenheit
     elif menu =='2':

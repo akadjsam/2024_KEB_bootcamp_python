@@ -15,3 +15,6 @@ def isPrime(n) -> bool: # -> bool 은 리턴타입이 무엇인지 알려주는 
                 return False
             i += 1
         return True
+
+def fahrenheit_to_celsius(fahrenheit):
+    return float((fahrenheit - 32.0) * 5.0 / 9.0)
