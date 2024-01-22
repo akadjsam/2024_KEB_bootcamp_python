@@ -54,13 +54,13 @@ class Charizard(Pokemon):
 #     pass
 
 class Pikachu:
-    def __init__(self,name,hp,fly):
+    def __init__(self,name,hp):
         self.name = name
         self.hp = hp
-        self.fly_behavior = fly
+        self.fly_behavior = Nofly() #composition
 
-nofly = Nofly()
-p1 = Pikachu("피카츄",100,nofly)
+
+p1 = Pikachu("피카츄",100)
 print(p1.fly_behavior.fly())
 
 
