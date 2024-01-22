@@ -7,7 +7,7 @@ class FlyingBehavior:
         return '하늘을 날아갑니다.'
 class JetPack(FlyingBehavior):
     def fly(self):
-        return super().fly()
+        return '로켓 추진기로 날아갑니다.'
 
 
 class Nofly(FlyingBehavior):
@@ -28,6 +28,8 @@ class Pokemon:
         self.__name = name
         self.hp = hp
         self.fly_behavior = fly #aggregation (has-a)
+    def set_fly_behavior(self,fly):
+        self.fly_behavior = fly
 
     def attack(self):
         print("공격")
@@ -48,15 +50,26 @@ class Pokemon:
     #name = property(get_name,set_name)
 class Charizard(Pokemon):
     pass
-class Pikachu(Pokemon):
-    pass
+# class Pikachu(Pokemon):
+#     pass
 
+class Pikachu:
+    def __init__(self,name,hp,fly):
+        self.name = name
+        self.hp = hp
+        self.fly_behavior = fly
 
 nofly = Nofly()
 p1 = Pikachu("피카츄",100,nofly)
-wings = FlyingBehavior()
-c1 = Charizard("리자몽",120,wings)
-print(p1.fly.fly())
-print(c1.fly.fly())
-print(p1,c1)
-print(p1+c1)
+print(p1.fly_behavior.fly())
+
+
+# wings = FlyingBehavior()
+# c1 = Charizard("리자몽",120,wings)
+# print(p1.fly_behavior.fly())
+# print(c1.fly_behavior.fly())
+# print(p1,c1)
+# print(p1+c1)
+
+# p1.set_fly_behavior(JetPack())
+# print(p1.fly_behavior.fly())
