@@ -2,16 +2,32 @@
 #자식 객체의 속성을 변경하면 클래스 속성에 영향을 미치지 않음, 나중에 클래스 속성을 변경해도 이미 생성한 자식객체에는 영향 미치지 않음
 #클래스 메서드에서의 클래스 변수는 모든 객체에 영향을 미친다.
 
-class FlyinMinin:
+class FlyingBehavior:
     def fly(self):
-        return print(f'{self.__name}이(가) 날아갑니다.')
-class SwimmingMixin:
+        return '하늘을 날아갑니다.'
+class JetPack(FlyingBehavior):
+    def fly(self):
+        return super().fly()
+
+
+class Nofly(FlyingBehavior):
+    def fly(self):
+        return  '하늘을 날 수 없습니다.'
+
+class FlyWithWings(FlyingBehavior):
+    def fly(self):
+        return super().fly()
+
+
+class SwimmingBehavior:
     def swim(self):
         return print(f'{self.__name}이(가) 수영을 합니다.')
+
 class Pokemon:
-    def __init__(self,name,hp):
+    def __init__(self,name,hp,fly):
         self.__name = name
         self.hp = hp
+        self.fly_behavior = fly #aggregation (has-a)
 
     def attack(self):
         print("공격")
@@ -30,12 +46,17 @@ class Pokemon:
         #return self.name + " + " +other.name
         return f'두 포켓몬스터 체력의 합은 {self.hp + other.hp}입니다.'
     #name = property(get_name,set_name)
-class Charizard(Pokemon, FlyinMinin):
+class Charizard(Pokemon):
     pass
-class Gyarados(Pokemon, SwimmingMixin):
+class Pikachu(Pokemon):
     pass
 
-g1 = Gyarados("갸라도스",100)
-c1 = Charizard("리자몽",120)
-print(g1,c1)
-print(g1+c1)
+
+nofly = Nofly()
+p1 = Pikachu("피카츄",100,nofly)
+wings = FlyingBehavior()
+c1 = Charizard("리자몽",120,wings)
+print(p1.fly.fly())
+print(c1.fly.fly())
+print(p1,c1)
+print(p1+c1)
