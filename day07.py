@@ -9,9 +9,8 @@ class SwimmingMixin:
     def swim(self):
         return print(f'{self.__name}이(가) 수영을 합니다.')
 class Pokemon:
-    def __init__(self,name,hp):
+    def __init__(self,name):
         self.__name = name
-        self.hp = hp
     def attack(self):
         print("공격")
 
@@ -26,14 +25,14 @@ class Pokemon:
         return self.__name + "입니다."
 
     def __add__(self, other):
-        return self.hp + other.hp
+        return self.name + " + " +other.name
     #name = property(get_name,set_name)
 class Charizard(Pokemon, FlyinMinin):
     pass
 class Gyarados(Pokemon, SwimmingMixin):
     pass
 
-g1 = Gyarados("갸라도스",25)
-c1 = Charizard("리자몽",20)
+g1 = Gyarados("갸라도스")
+c1 = Charizard("리자몽")
 print(g1,c1)
 print(g1+c1)
