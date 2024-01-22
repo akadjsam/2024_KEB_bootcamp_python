@@ -9,11 +9,12 @@ class SwimmingMixin:
     def swim(self):
         return print(f'{self.__name}이(가) 수영을 합니다.')
 class Pokemon:
-    def __init__(self,name):
+    def __init__(self,name,hp):
         self.__name = name
+        self.hp = hp
+
     def attack(self):
         print("공격")
-
     @property #데코레이터, getter로 동작
     def name(self):
         return self.__name
@@ -21,18 +22,20 @@ class Pokemon:
     def name(self,new_name):
         self.__name = new_name
 
+    #magic method
     def __str__(self): #print(객체) 하면 클래스 이름이 나왔었는데 매직 메서드를 이용하여 __name이 출력되게 바꿈
         return self.__name + "입니다."
 
     def __add__(self, other):
-        return self.name + " + " +other.name
+        #return self.name + " + " +other.name
+        return f'두 포켓몬스터 체력의 합은 {self.hp + other.hp}입니다.'
     #name = property(get_name,set_name)
 class Charizard(Pokemon, FlyinMinin):
     pass
 class Gyarados(Pokemon, SwimmingMixin):
     pass
 
-g1 = Gyarados("갸라도스")
-c1 = Charizard("리자몽")
+g1 = Gyarados("갸라도스",100)
+c1 = Charizard("리자몽",120)
 print(g1,c1)
 print(g1+c1)
