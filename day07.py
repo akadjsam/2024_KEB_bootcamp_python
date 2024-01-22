@@ -1,5 +1,6 @@
 #from mymath import *
 import mymath as mm
+from mymath import isPrime, fahrenheit_to_celsius, celsius_to_fahrenheit
 
 if __name__ == "__main__":
     while True:
@@ -9,17 +10,17 @@ if __name__ == "__main__":
         #Fahrenheit to Celsius
         if menu == '1':
             fahrenheit = float(input("Input Fahrenheit : "))
-            print(f'Fahrenheit : {fahrenheit}F, Celsius : {mm.fahrenheit_to_celsius(fahrenheit):.4f}C')
+            print(f'Fahrenheit : {fahrenheit}F, Celsius : {fahrenheit_to_celsius(fahrenheit):.4f}C')
 
         # Celsius to Fahrenheit
         elif menu =='2':
             Celsius = float(input("Input Fahrenheit : "))
-            print(f'CelsiusQD : {Celsius}C, Fahrenheit : {(mm.celsius_to_fahrenheit(Celsius)):.4f}F')
+            print(f'CelsiusQD : {Celsius}C, Fahrenheit : {(celsius_to_fahrenheit(Celsius)):.4f}F')
 
         # Check Prime Number
         elif menu == '3':
             number = int(input("Input number : "))
-            if mm.isPrime(number):
+            if isPrime(number):
                 print(f"{number} is prime number")
             else:
                 print(f"{number} is not prime number")
@@ -34,7 +35,7 @@ if __name__ == "__main__":
             if n1 > n2:
                 n1, n2 = n2, n1
             for number in range(n1, n2 + 1):
-                if mm.isPrime(number):
+                if isPrime(number):
                     prime_list.append(str(number)) # number(int)를 string으로 변환하여 리스트에 추가
 
             prime_str = ", ".join(prime_list) # join으로 list를 string으로 변환
