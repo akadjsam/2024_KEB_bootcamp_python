@@ -1,75 +1,51 @@
-#클래스에 속성을 할당할 수 있고 해당 속성은 자식 객체로 상속된다.
-#자식 객체의 속성을 변경하면 클래스 속성에 영향을 미치지 않음, 나중에 클래스 속성을 변경해도 이미 생성한 자식객체에는 영향 미치지 않음
-#클래스 메서드에서의 클래스 변수는 모든 객체에 영향을 미친다.
+import mymath
 
-class FlyingBehavior:
-    def fly(self):
-        return '하늘을 날아갑니다.'
-class JetPack(FlyingBehavior):
-    def fly(self):
-        return '로켓 추진기로 날아갑니다.'
+while True:
+    menu = input("1) Fahrenheit to Celsius\t2) Celsius to Fahrenheit\t\
+    3) Check Prime Number\t4) Specify the Prime Number's range(2 inputs)\t5) Quit program : ")
 
+    #Fahrenheit to Celsius
+    if menu == '1':
+        fahrenheit = float(input("Input Fahrenheit : "))
+        print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit - 32.0) * 5.0 / 9.0):.4f}C')
 
-class Nofly(FlyingBehavior):
-    def fly(self):
-        return  '하늘을 날 수 없습니다.'
+    # Celsius to Fahrenheit
+    elif menu =='2':
+        Celsius = float(input("Input Fahrenheit : "))
+        print(f'CelsiusQD : {Celsius}C, Fahrenheit : {((Celsius * 9.0/5.0) + 32.0):.4f}F')
 
-class FlyWithWings(FlyingBehavior):
-    def fly(self):
-        return super().fly()
+    # Check Prime Number
+    elif menu == '3':
+        number = int(input("Input number : "))
+        if mymath.isPrime(number):
+            print(f"{number} is prime number")
+        else:
+            print(f"{number} is not prime number")
+        print()
 
+    # Specify range
+    elif menu == '4':
+        prime_list = []
+        numbers = input("Input First number and Second number : ").split()
+        n1 = int(numbers[0])
+        n2 = int(numbers[1])
+        if n1 > n2:
+            n1, n2 = n2, n1
+        for number in range(n1, n2 + 1):
+            if mymath.isPrime(number):
+                prime_list.append(str(number)) # number(int)를 string으로 변환하여 리스트에 추가
 
-class SwimmingBehavior:
-    def swim(self):
-        return print(f'{self.__name}이(가) 수영을 합니다.')
+        prime_str = ", ".join(prime_list) # join으로 list를 string으로 변환
 
-class Pokemon:
-    def __init__(self,name,hp,fly):
-        self.__name = name
-        self.hp = hp
-        self.fly_behavior = fly #aggregation (has-a)
-    def set_fly_behavior(self,fly):
-        self.fly_behavior = fly
+        if len(prime_list) == 0:
+            print(f'{n1}와 {n2} 사이의 소수가 존재하지 않습니다.')
+        else:
+            print(f'{n1}와 {n2} 사이의 소수는 {prime_str} 입니다.')
+        print()
 
-    def attack(self):
-        print("공격")
-    @property #데코레이터, getter로 동작
-    def name(self):
-        return self.__name
-    @name.setter #데코레이터, getter로 동작
-    def name(self,new_name):
-        self.__name = new_name
-
-    #magic method
-    def __str__(self): #print(객체) 하면 클래스 이름이 나왔었는데 매직 메서드를 이용하여 __name이 출력되게 바꿈
-        return self.__name + "입니다."
-
-    def __add__(self, other):
-        #return self.name + " + " +other.name
-        return f'두 포켓몬스터 체력의 합은 {self.hp + other.hp}입니다.'
-    #name = property(get_name,set_name)
-class Charizard(Pokemon):
-    pass
-# class Pikachu(Pokemon):
-#     pass
-
-class Pikachu:
-    def __init__(self,name,hp):
-        self.name = name
-        self.hp = hp
-        self.fly_behavior = Nofly() #composition
-
-
-p1 = Pikachu("피카츄",100)
-print(p1.fly_behavior.fly())
-
-
-# wings = FlyingBehavior()
-# c1 = Charizard("리자몽",120,wings)
-# print(p1.fly_behavior.fly())
-# print(c1.fly_behavior.fly())
-# print(p1,c1)
-# print(p1+c1)
-
-# p1.set_fly_behavior(JetPack())
-# print(p1.fly_behavior.fly())
+    # Quit program
+    elif menu == '5':
+        print("Terminate program")
+        break
+    else:
+        print("choose number 1 or 2 or 3!")
